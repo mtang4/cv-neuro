@@ -13,7 +13,7 @@ df = pd.read_excel('ABIDE_Phenotypics.xlsx', sheet_name='5320_ABIDE_Phenotypics_
 listID=df['Anonymized ID']
 
 countImg=0
-for i in range(1, df.index):
+for i in range(1, len(listID)):
 	idName=str(listID[i])
 	dirlist = os.listdir('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects'+idName)
 	subFolder=str(dirlist[0])
