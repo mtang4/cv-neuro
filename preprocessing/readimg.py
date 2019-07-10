@@ -15,7 +15,7 @@ listID=df['Anonymized ID']
 countImg=0
 for i in range(1, len(listID)):
 	idName=str(listID[i])
-	dirlist = os.listdir('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects'+idName)
+	dirlist = os.listdir('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects/'+idName)
 	subFolder=str(dirlist[0])
 	img=nib.load('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects/'+idName+'/'+subFolder+
 		     '/rest_0001/REST.nii.gz')
