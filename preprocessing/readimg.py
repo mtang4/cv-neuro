@@ -23,9 +23,10 @@ for i in range(1, len(listID)):
 	imgData=img.get_fdata()
 	if i==1:
 		initialDim=imgData.shape
-		print('initial dim: '+str(initialDim))
+		print('dim: '+str(initialDim))
 	else:
 		if imgData.shape!=initialDim:
-			print('FLAG: subject '+idName)
+			newDim=imgData.shape
+			print('subject '+idName+' - new dim: '+str(imgData.shape))
   
 print('total images: '+count)
