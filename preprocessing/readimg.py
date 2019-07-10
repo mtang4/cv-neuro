@@ -21,7 +21,7 @@ for i in range(1, len(listID)):
 		     '/rest_0001/REST.nii.gz')
 	countImg+=1
 	imgData=img.get_fdata()
-	if i==0:
+	if i==1:
 		initialDim=imgData.shape
 		print('initial dim: '+str(initialDim))
 	else:
