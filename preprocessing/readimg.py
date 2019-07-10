@@ -13,15 +13,15 @@ df = pd.read_excel('ABIDE_Phenotypics.xlsx', sheet_name='5320_ABIDE_Phenotypics_
 listID=df['Anonymized ID']
 
 for i in df.index:
-       idName=str(df['Subject'][i])
-       dirlist = os.listdir('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects'+idName)
-       subFolder=str(dirlist[0])
-       img=nib.load('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects'+idName+subFolder+'rest_0001/REST.nii.gz')
-       imgData=img.get_fdata()
-       if i==0:
-            initialDim=imgData.shape
-            print('initial dim: '+str(initialDim))
-        else:
-            if imgData.shape!=initialDim:
-                print('FLAG: subject '+idName)
+	idName=str(df['Subject'][i])
+	dirlist = os.listdir('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects'+idName)
+	subFolder=str(dirlist[0])
+	img=nib.load('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects'+idName+subFolder+'rest_0001/REST.nii.gz')
+	imgData=img.get_fdata()
+	if i==0:
+		initialDim=imgData.shape
+		print('initial dim: '+str(initialDim))
+	else:
+		if imgData.shape!=initialDim:
+			print('FLAG: subject '+idName)
   
