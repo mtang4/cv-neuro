@@ -19,7 +19,7 @@ for i in range(1, len(listID)):
 	subFolder=str(dirlist[0])
 	img=nib.load('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects/'+idName+'/'+subFolder+
 		     '/rest_0001/REST.nii.gz')
-	count+=1
+	countImg+=1
 	imgData=img.get_fdata()
 	if i==0:
 		initialDim=imgData.shape
