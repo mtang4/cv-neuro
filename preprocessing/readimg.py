@@ -12,11 +12,14 @@ import os
 df = pd.read_excel('ABIDE_Phenotypics.xlsx', sheet_name='5320_ABIDE_Phenotypics_20190625')
 listID=df['Anonymized ID']
 
-for i in df.index:
+countImg=0
+for i in range(1, df.index):
 	idName=str(listID[i])
 	dirlist = os.listdir('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects'+idName)
 	subFolder=str(dirlist[0])
-	img=nib.load('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects'+idName+subFolder+'rest_0001/REST.nii.gz')
+	img=nib.load('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects/'+idName+'/'+subFolder+
+		     '/rest_0001/REST.nii.gz')
+	count+=1
 	imgData=img.get_fdata()
 	if i==0:
 		initialDim=imgData.shape
@@ -25,3 +28,4 @@ for i in df.index:
 		if imgData.shape!=initialDim:
 			print('FLAG: subject '+idName)
   
+print('total images: '+count)
