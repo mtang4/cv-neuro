@@ -28,5 +28,6 @@ for i in range(1, len(listID)):
 		if imgData.shape!=initialDim:
 			newDim=imgData.shape
 			print('subject '+idName+' - new dim: '+str(imgData.shape))
+			initialDim=newDim
   
 print('total images: '+count)
