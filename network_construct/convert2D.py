@@ -13,7 +13,7 @@ for i in range(1, len(listID)):
 	idName=str(listID[i])
 	img=nib.load('/vulcan/scratch/mtang/datasets/ABIDE/min_process/'+idName+'.nii.gz')
 	imgData=img.get_fdata()
-    size=imgData.shape
+	size=imgData.shape
     for i in range(0,shape[3]):
         slice=img[:,:,i,1]
         print('slice: '+str(slice))
