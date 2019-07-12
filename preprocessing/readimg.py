@@ -6,7 +6,7 @@ from pandas import ExcelFile
 import os
 
 df = pd.read_excel('abide_summary.xlsx', sheet_name='abide_summary')
-listID=df['FILED_ID']
+listID=df['FILE_ID']
 classLabel=df['DX_GROUP']
 
 countImg=0
