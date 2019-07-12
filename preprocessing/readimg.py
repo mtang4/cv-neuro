@@ -5,7 +5,7 @@ from pandas import ExcelFile
 
 import os
 
-df = pd.read_excel('abide_summary.xlsx', sheet_name='abide_summary')
+df = pd.read_excel('abide_summary.xlsx', sheet_name='summary')
 listID=df['FILE_ID']
 classLabel=df['DX_GROUP']
 
