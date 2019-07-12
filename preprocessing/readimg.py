@@ -5,10 +5,6 @@ from pandas import ExcelFile
 
 import os
 
-# sites=['caltech', 'CMU', 'KKI', 'leuven', 'maxmun', 'NYU', 'OHSU', 'olin',
-#       'pitt', 'SBL', 'SDSU', 'stanford', 'trinity', 'UCLA', 'UM', 'USM',
-#       'yale']
-
 df = pd.read_excel('ABIDE_Phenotypics.xlsx', sheet_name='5320_ABIDE_Phenotypics_20190625')
 listID=df['Anonymized ID']
 classLabel=df['Subject Type']
