@@ -5,17 +5,16 @@ from pandas import ExcelFile
 
 import os
 
-df = pd.read_excel('ABIDE_Phenotypics.xlsx', sheet_name='5320_ABIDE_Phenotypics_20190625')
-listID=df['Anonymized ID']
-classLabel=df['Subject Type']
+df = pd.read_excel('abide_summary.xlsx', sheet_name='abide_summary')
+listID=df['FILED_ID']
+classLabel=df['DX_GROUP']
 
 countImg=0
 for i in range(1, len(listID)):
 	idName=str(listID[i])
-	dirlist = os.listdir('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects/'+idName)
-	subFolder=str(dirlist[0])
-	img=nib.load('/vulcan/scratch/mtang/datasets/ABIDE/allSubjects/'+idName+'/'+subFolder+
-		     '/rest_0001/REST.nii.gz')
+	# dirlist = os.listdir('/vulcan/scratch/mtang/datasets/ABIDE/min_process/'+idName)
+	# subFolder=str(dirlist[0])
+	img=nib.load('/vulcan/scratch/mtang/datasets/ABIDE/min_process/'+idName+'.nii.gz')
 	countImg+=1
 	imgData=img.get_fdata()
 	if i==1:
